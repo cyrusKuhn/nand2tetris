@@ -1,0 +1,11 @@
+# Temporary files
+*.out
+*.hack
+*.class
+
+# Some metadata
+.DS_Store
+Thumbs.db
+
+# IDE configs
+.vscode/
