@@ -14,5 +14,18 @@ CHIP PC {
     OUT out[16];
     
     PARTS:
-    //// Replace this comment with your code.
+    Register(in=newvalue, load=true, out=pastvalue);
+
+    DFF(in=reset, out=resetpast);
+    DFF(in=load, out=loadpast);
+    DFF(in=inc, out=incpast);
+    Register(in=in, load=true, out=inpast);
+
+    Inc16(in=pastvalue, out=pastvalueinc);
+
+    Mux16(a=pastvalue, b=pastvalueinc, sel=incpast, out=intermediate1);
+    Mux16(a=intermediate1, b=inpast, sel=loadpast, out=intermediate2);
+    Mux16(a=intermediate2, sel=resetpast, out=newvalue);
+
+    And16(a=newvalue, b=newvalue, out=out);
 }
