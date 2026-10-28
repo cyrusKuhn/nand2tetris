@@ -17,6 +17,8 @@ public class Translator {
     public Translator(String filepath) {
         this.filepath = filepath;
         Instruction.currentLabelCount = 0;
+        Matcher matcher = Pattern.compile("(\\w+).vm").matcher(filepath);
+        if (matcher.matches()) Instruction.currentFileName = matcher.group(1);
 
         readFile();
         prepareInput();

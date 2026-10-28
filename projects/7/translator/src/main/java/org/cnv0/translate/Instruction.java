@@ -7,6 +7,7 @@ import java.util.Map;
 
 public abstract class Instruction {
     protected static int currentLabelCount;
+    protected static String currentFileName;
 
     protected List<String> assembly = new ArrayList<>();
     public List<String> getAssembly() {
@@ -148,7 +149,7 @@ public abstract class Instruction {
                         assembly.add("D=M");
                         break;
                     case "static":
-                        assembly.add("@" + (16 + Integer.parseInt(value)));
+                        assembly.add("@" + currentFileName + "." + Integer.parseInt(value));
                         assembly.add("D=M");
                         break;
                     default:
@@ -187,7 +188,7 @@ public abstract class Instruction {
                         assembly.add("M=D");
                         break;
                     case "static":
-                        assembly.add("@" + (16 + Integer.parseInt(value)));
+                        assembly.add("@" + currentFileName + "." + Integer.parseInt(value));
                         assembly.add("D=A");
                         assembly.add("@15");
                         assembly.add("M=D");

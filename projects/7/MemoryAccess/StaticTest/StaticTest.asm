@@ -19,7 +19,7 @@ A=M
 M=D
 @SP
 M=M+1
-@24
+@null.8
 D=A
 @15
 M=D
@@ -31,7 +31,7 @@ D=M
 @15
 A=M
 M=D
-@19
+@null.3
 D=A
 @15
 M=D
@@ -43,7 +43,7 @@ D=M
 @15
 A=M
 M=D
-@17
+@null.1
 D=A
 @15
 M=D
@@ -55,14 +55,14 @@ D=M
 @15
 A=M
 M=D
-@19
+@null.3
 D=M
 @SP
 A=M
 M=D
 @SP
 M=M+1
-@17
+@null.1
 D=M
 @SP
 A=M
@@ -76,7 +76,7 @@ A=A-1
 M=M-D
 @SP
 M=M-1
-@24
+@null.8
 D=M
 @SP
 A=M
